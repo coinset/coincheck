@@ -1,4 +1,3 @@
-import { RollupOptions } from 'rollup'
 import { main } from './package.json'
 import alias from '@rollup/plugin-alias'
 import { join } from 'path'

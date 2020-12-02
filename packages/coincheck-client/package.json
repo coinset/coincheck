@@ -12,9 +12,6 @@
   "files": [
     "dist"
   ],
-  "publishConfig": {
-    "registry": "https://registry.yarnpkg.com"
-  },
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"
@@ -41,5 +38,6 @@
   },
   "dependencies": {
     "got": "^11.8.0"
-  }
+  },
+  "gitHead": "a8e8282533ef9a955e51407e34c50559c3d787ba"
 }
