@@ -9,6 +9,7 @@
   "homepage": "",
   "license": "MIT",
   "main": "dist/index.js",
+  "module": "dist/index.esm.js",
   "files": [
     "dist"
   ],
