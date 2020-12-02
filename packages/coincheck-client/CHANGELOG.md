@@ -1,0 +1,17 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+# 0.1.0-alpha.0 (2020-12-02)
+
+
+### Features
+
+* **coincheck-client:** add api/exchange-orders-rate ([fbb8378](https://github.com/TomokiMiyauci/coincheck-client/commit/fbb8378c1d341f95beafef820edde90709058471))
+* **coincheck-client:** add api/order-books ([e382954](https://github.com/TomokiMiyauci/coincheck-client/commit/e382954eddbb66a97fc6601ec14f28e7f2f285f1))
+* **coincheck-client:** add api/rate ([0f6508a](https://github.com/TomokiMiyauci/coincheck-client/commit/0f6508ac683ff82c6208bedd0d7b2a117078609a))
+* **coincheck-client:** add api/ticker ([1830500](https://github.com/TomokiMiyauci/coincheck-client/commit/183050053efd6336e259866680b230b3d308e100))
+* **coincheck-client:** add api/trades ([ecb6e3d](https://github.com/TomokiMiyauci/coincheck-client/commit/ecb6e3d0e695cd35e46f26c64e77284d4e822aa4))
+* **coincheck-client:** add base instance ([c10f49f](https://github.com/TomokiMiyauci/coincheck-client/commit/c10f49ffc73d94771863f0910adfb3e6d462e408))
+* **coincheck-client:** add types of pair ([381fa8e](https://github.com/TomokiMiyauci/coincheck-client/commit/381fa8e6ce00f29f3bd1ef5280cc037d8d8f958a))

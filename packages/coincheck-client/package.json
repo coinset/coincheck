@@ -1,6 +1,6 @@
 {
   "name": "coincheck-client",
-  "version": "0.0.0",
+  "version": "0.1.0-alpha.0",
   "description": "Coincheck api for node",
   "keywords": [
     "coincheck"
