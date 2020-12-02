@@ -20,7 +20,10 @@
       "path": "cz-conventional-changelog"
     }
   },
-  "scripts": {},
+  "scripts": {
+    "build": "rollup -c rollup.config.ts",
+    "prepublishOnly": "yarn build"
+  },
   "devDependencies": {
     "@rollup/plugin-alias": "^3.1.1",
     "@types/jest": "^26.0.15",
