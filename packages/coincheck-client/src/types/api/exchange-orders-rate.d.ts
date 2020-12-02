@@ -1,4 +1,4 @@
-import { BTC_JPY, ETC_JPY, FCT_JPY, MONA_JPY } from '@/types/pair'
+import { BTC_JPY, ETC_JPY, FCT_JPY, MONA_JPY } from '../pair'
 
 export type GetResponse = {
   success: boolean

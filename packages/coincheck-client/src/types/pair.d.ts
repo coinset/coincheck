@@ -15,7 +15,7 @@ import {
   BCH,
   QTUM,
   IOST
-} from '@/types/ticker'
+} from './ticker'
 
 type BasePair<T extends Ticks, U extends Ticks> = `${T}_${U}`
 

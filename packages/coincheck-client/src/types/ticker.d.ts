@@ -13,7 +13,6 @@ export type XLM = 'xlm'
 export type QTUM = 'qtum'
 export type BAT = 'bat'
 export type IOST = 'iost'
-export const h = 'hoge'
 export type Ticks =
   | BTC
   | JPY
