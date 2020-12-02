@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-alpha.4](https://github.com/TomokiMiyauci/coincheck-client/compare/v0.1.0-alpha.3...v0.1.0-alpha.4) (2020-12-02)
+
+
+### Bug Fixes
+
+* **coincheck-client:** change to relative path ([58d8160](https://github.com/TomokiMiyauci/coincheck-client/commit/58d81600747b664a83fd524c5aa2a46d04f4e874))
+
+
+
+
+
 # [0.1.0-alpha.3](https://github.com/TomokiMiyauci/coincheck-client/compare/v0.1.0-alpha.2...v0.1.0-alpha.3) (2020-12-02)
 
 **Note:** Version bump only for package coincheck-client
