@@ -1,14 +1,20 @@
-import type { btc, jpy, plt } from 'cryptocurrency-types'
+import fetch from 'node-fetch'
 
 import { BASE_URL, API_TICKER } from '@/constants/api'
-import type { Join } from '@/utils/types'
-import fetch from 'node-fetch'
-import type { RequestInit } from 'node-fetch'
 
-type TickerPair = Join<btc, jpy> | Join<plt, jpy>
+import type { PublicAPI } from '@/shared/types'
+import type { Join } from '@/utils/types'
+import type { btc, jpy, plt } from 'cryptocurrency-types'
+
 const ALL_TICKER_PAIRS: TickerPair[] = ['btc_jpy', 'plt_jpy']
 
-type APITickerResponse = {
+type TickerPair = Join<btc, jpy> | Join<plt, jpy>
+
+type TickerOptions = {
+  pair: TickerPair
+}
+
+type TickerResponse = {
   last: number
   bid: number
   ask: number
@@ -26,10 +32,10 @@ type APITickerResponse = {
  * @see https://coincheck.com/ja/documents/exchange/api#ticker
  * @beta
  */
-const ticker = async (
-  pair: TickerPair,
-  init?: RequestInit
-): Promise<APITickerResponse> => {
+const ticker: PublicAPI<TickerOptions, TickerResponse> = async (
+  { pair },
+  init
+) => {
   const searchParams = new URLSearchParams({
     pair
   })
@@ -41,8 +47,8 @@ const ticker = async (
     throw Error(response.statusText)
   }
 
-  return (await response.json()) as APITickerResponse
+  return (await response.json()) as TickerResponse
 }
 
 export { ticker, ALL_TICKER_PAIRS }
-export type { TickerPair, APITickerResponse }
+export type { TickerPair, TickerResponse }
