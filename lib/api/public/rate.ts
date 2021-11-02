@@ -1,12 +1,13 @@
-import fetch from 'node-fetch'
-
-import { BASE_URL, API_RATE } from '../../constants/api'
+import { BASE_URL, API_RATE } from '@/constants/api'
+import { jsonFetch } from '@/shared/fetch'
 
 import { join } from 'path'
 
+import { Reviver } from '@/shared/types'
 import type { PublicAPI } from '@/shared/types'
 import type { Join } from '@/utils/types'
 import type { btc, jpy, etc, fct, mona, iost } from 'cryptocurrency-types'
+
 
 const ALL_RATE_PAIRS: RatePair[] = [
   'btc_jpy',
@@ -31,7 +32,7 @@ type RateResponse = {
   rate: number
 }
 
-const reciever = (key: string, value: unknown) => {
+const reviver: Reviver = (key, value) => {
   if (key === 'rate' && typeof value === 'string') {
     return parseFloat(value)
   }
@@ -40,15 +41,8 @@ const reciever = (key: string, value: unknown) => {
 
 const rate: PublicAPI<RateOptions, RateResponse> = async ({ pair }, init) => {
   const url = new URL(join(API_RATE, pair), BASE_URL)
-  const res = await fetch(url.toString(), init)
 
-  if (!res.ok) {
-    throw Error(res.statusText)
-  }
-
-  const text = await res.text()
-
-  return JSON.parse(text, reciever) as RateResponse
+  return jsonFetch<RateResponse>(url, init, { parseJson: reviver })
 }
 
 export { rate, ALL_RATE_PAIRS }

@@ -1,6 +1,5 @@
-import fetch from 'node-fetch'
-
 import { BASE_URL, API_TICKER } from '@/constants/api'
+import { jsonFetch } from '@/shared/fetch'
 
 import type { PublicAPI } from '@/shared/types'
 import type { Join } from '@/utils/types'
@@ -42,12 +41,7 @@ const ticker: PublicAPI<TickerOptions, TickerResponse> = async (
 
   const url = new URL(API_TICKER, BASE_URL)
   url.search = searchParams.toString()
-  const response = await fetch(url.toString(), init)
-  if (!response.ok) {
-    throw Error(response.statusText)
-  }
-
-  return (await response.json()) as TickerResponse
+  return jsonFetch(url, init)
 }
 
 export { ticker, ALL_TICKER_PAIRS }

@@ -1,17 +1,17 @@
-import fetch from 'node-fetch'
-
 import { ALL_EXCHANGE_RATE_PAIRS } from '@/api/public/exchange_rate'
 import type { ExchangeRatePair } from '@/api/public/exchange_rate'
 import { BASE_URL, API_TRADES } from '@/constants/api'
+import { jsonFetch } from '@/shared/fetch'
 import { DateRegExp } from '@/utils/regex'
 
+import { Reviver } from '@/shared/types'
 import type { PublicAPI, OrderType, Order } from '@/shared/types'
 
 type TradesPair = ExchangeRatePair
 
 const ALL_TRADES_PAIRS = ALL_EXCHANGE_RATE_PAIRS
 
-const reciever = (key: string, value: unknown) => {
+const reviver: Reviver = (key, value) => {
   if (
     key === 'created_at' &&
     typeof value === 'string' &&
@@ -59,15 +59,9 @@ const trades: PublicAPI<TradesOptions, TradesResponse> = async (
   url.search = new URLSearchParams({
     pair
   }).toString()
-  const res = await fetch(url.toString(), init)
 
-  if (!res.ok) {
-    throw Error(res.statusText)
-  }
-
-  const text = await res.text()
-
-  return JSON.parse(text, reciever) as TradesResponse
+  return jsonFetch(url, init, { parseJson: reviver })
 }
 
 export { trades, ALL_TRADES_PAIRS }
+export type { TradesOptions, TradesResponse }

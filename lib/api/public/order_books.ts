@@ -1,15 +1,15 @@
-import fetch from 'node-fetch'
-
 import { BASE_URL, API_ORDER_BOOKS } from '@/constants/api'
+import { jsonFetch } from '@/shared/fetch'
 
+import { Reviver } from '@/shared/types'
 import type { RequestInit } from 'node-fetch'
 
-const reciever = (key: string, value: [string, string][]) => {
+const reviver: Reviver = (key, value) => {
   if (
     key === 'asks' ||
     (key === 'bids' && Array.isArray(value) && !!value.length)
   ) {
-    return value.map((v) => {
+    return (value as [string, string][]).map((v) => {
       const [vv, vvv] = v
       return [parseFloat(vv), parseFloat(vvv)]
     })
@@ -25,15 +25,7 @@ type OrderBooksResponse = {
 const orderBooks = async (init?: RequestInit): Promise<OrderBooksResponse> => {
   const url = new URL(API_ORDER_BOOKS, BASE_URL)
 
-  const res = await fetch(url.toString(), init)
-
-  if (!res.ok) {
-    throw Error(res.statusText)
-  }
-
-  const text = await res.text()
-
-  return JSON.parse(text, reciever)
+  return jsonFetch(url, init, { parseJson: reviver })
 }
 
 export { orderBooks }
