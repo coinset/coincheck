@@ -16,7 +16,7 @@
     "prepare": "husky install",
     "lint:eslint": "eslint --ignore-path .gitignore .",
     "lint:tsc": "tsc --noEmit",
-    "lint:yamllint": "yamllint **/*.yaml --ignore=node_modules/**/*",
+    "lint:yamllint": "yamllint **/*.yaml --ignore=node_modules/**/* --ignore=pnpm-lock.yaml",
     "lint": "run-p lint:*",
     "test:unit": "jest",
     "test": "run-p test:*",
@@ -28,8 +28,8 @@
   "sideEffects": false,
   "license": "MIT",
   "dependencies": {
-    "node-fetch": "^2.6.6",
-    "cryptocurrency-types": "^1.0.0-beta.2"
+    "cryptocurrency-types": "^1.0.0-beta.2",
+    "node-fetch": "^2.6.6"
   },
   "devDependencies": {
     "@commitlint/cli": "^14.1.0",
@@ -52,6 +52,7 @@
     "eslint-import-resolver-alias": "^1.1.2",
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-tsdoc": "^0.2.14",
+    "got": "^11.8.2",
     "husky": "^7.0.4",
     "jest": "^27.3.1",
     "lint-staged": "^11.2.6",
