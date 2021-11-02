@@ -8,6 +8,7 @@ import type { BuildOptions } from 'esbuild'
 
 const sharedOptions: BuildOptions = {
   entryPoints: [resolve(__dirname, '..', 'lib', 'index.ts')],
+  platform: 'node',
   bundle: true,
   minify: true,
   sourcemap: true,

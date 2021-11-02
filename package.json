@@ -4,6 +4,7 @@
   "version": "0.1.0-alpha.4",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
   "exports": {
     ".": {
       "require": "./dist/index.cjs.js",
@@ -20,14 +21,15 @@
     "test:unit": "jest",
     "test": "run-p test:*",
     "build:scripts": "node -r esbuild-register scripts/build.ts",
-    "build:types": "tsc --emitDeclarationOnly && tsc-alias",
+    "build:types": "tsc -p tsconfig.build.json --emitDeclarationOnly && tsc-alias -p tsconfig.build.json",
     "build": "run-p build:*",
     "release": "semantic-release"
   },
   "sideEffects": false,
   "license": "MIT",
   "dependencies": {
-    "node-fetch": "^3.0.0"
+    "node-fetch": "^2.6.6",
+    "cryptocurrency-types": "^1.0.0-beta.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^14.1.0",
@@ -37,12 +39,12 @@
     "@swc/jest": "^0.2.5",
     "@types/jest": "^27.0.2",
     "@types/node": "^16.11.6",
+    "@types/node-fetch": "2",
     "@typescript-eslint/eslint-plugin": "^5.3.0",
     "@typescript-eslint/parser": "^5.3.0",
     "commitizen": "^4.2.4",
     "commitlint": "^14.1.0",
     "commitlint-config-gitmoji": "^2.2.5",
-    "cryptocurrency-types": "^1.0.0-beta.2",
     "cz-emoji": "^1.3.1",
     "esbuild": "^0.13.12",
     "esbuild-register": "^3.0.0",

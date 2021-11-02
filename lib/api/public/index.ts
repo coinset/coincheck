@@ -1,2 +1,5 @@
 export * from '@/api/public/ticker'
 export * from '@/api/public/exchange_rate'
+export * from '@/api/public/trades'
+export * from '@/api/public/order_books'
+export * from '@/api/public/rate'

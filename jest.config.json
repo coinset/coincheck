@@ -5,8 +5,7 @@
     "^.+\\.(t|j)sx?$": "@swc/jest"
   },
   "moduleNameMapper": {
-    "^@/(.*)$": "<rootDir>/lib/$1",
-    "^@mock/(.*)$": "<rootDir>/tests/mock/$1"
+    "^@/(.*)$": "<rootDir>/lib/$1"
   },
   "clearMocks": true,
   "collectCoverage": true,
