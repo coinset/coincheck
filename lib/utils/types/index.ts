@@ -4,4 +4,6 @@ type Join<
   Separator extends string = '_'
 > = `${T}${Separator}${U}`
 
-export type { Join }
+type StrictExtract<T, U extends T> = T extends U ? T : never
+
+export type { Join, StrictExtract }

@@ -37,8 +37,8 @@ type TradesResponse = {
   pagination: {
     limit: number
     order: Order
-    starting_after: null
-    ending_before: null
+    starting_after: null | number
+    ending_before: null | number
   }
   data: {
     id: number

@@ -8,7 +8,6 @@ import type { PublicAPI } from '@/shared/types'
 import type { Join } from '@/utils/types'
 import type { btc, jpy, etc, fct, mona, iost } from 'cryptocurrency-types'
 
-
 const ALL_RATE_PAIRS: RatePair[] = [
   'btc_jpy',
   'etc_jpy',

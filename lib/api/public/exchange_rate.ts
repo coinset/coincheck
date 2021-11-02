@@ -1,17 +1,14 @@
 import { API_EXCHANGE_ORDERS_RATE, BASE_URL } from '@/constants/api'
 import { jsonFetch } from '@/shared/fetch'
 
-
 import type { OrderType, PublicAPI } from '@/shared/types'
-import type { Join } from '@/utils/types'
-import type { btc, jpy, etc, fct, mona, plt } from 'cryptocurrency-types'
+import type { StrictExtract } from '@/utils/types'
+import type { all_Pairs } from 'cryptocurrency-types'
 
-type ExchangeRatePair =
-  | Join<btc, jpy>
-  | Join<etc, jpy>
-  | Join<fct, jpy>
-  | Join<mona, jpy>
-  | Join<plt, jpy>
+type ExchangeRatePair = StrictExtract<
+  all_Pairs,
+  'btc_jpy' | 'etc_jpy' | 'fct_jpy' | 'mona_jpy' | 'plt_jpy'
+>
 
 type ExchangeRateOptions = {
   pair: ExchangeRatePair
