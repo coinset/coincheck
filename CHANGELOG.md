@@ -1,3 +1,9 @@
+# [v1.0.0-beta.2](https://github.com/TomokiMiyauci/coincheck-client/compare/v1.0.0-beta.1...v1.0.0-beta.2) (2021-11-02)
+
+## 🐛 Bug Fixes
+
+- [`8de76fe`](https://github.com/TomokiMiyauci/coincheck-client/commit/8de76fe) Add extenal module to dependencies
+
 # v1.0.0-beta.1 (2021-11-02)
 
 ## ✨ New Features
