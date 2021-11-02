@@ -1,5 +1,6 @@
-import { BASE_URL } from '@/constants/api'
 import got, { OptionsOfTextResponseBody } from 'got'
+
+import { BASE_URL } from '@/constants/api'
 
 const instance = got.extend({
   prefixUrl: BASE_URL
