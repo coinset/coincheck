@@ -5,23 +5,79 @@ import { join } from 'path'
 
 import { Reviver } from '@/shared/types'
 import type { PublicAPI } from '@/shared/types'
-import type { Join } from '@/utils/types'
-import type { btc, jpy, etc, fct, mona, iost } from 'cryptocurrency-types'
+import type { StrictExtract } from '@/utils/types'
+import type { all_pairs } from 'cryptocurrency-types'
 
 const ALL_RATE_PAIRS: RatePair[] = [
   'btc_jpy',
   'etc_jpy',
   'fct_jpy',
+  'mona_jpy',
   'iost_jpy',
-  'mona_jpy'
+  'eth_jpy',
+  'bat_jpy',
+  'mona_btc',
+  'bat_btc',
+  'bch_btc',
+  'bch_jpy',
+  'ltc_btc',
+  'plt_jpy',
+  'lsk_btc',
+  'iost_btc',
+  'qtum_btc',
+  'etc_btc',
+  'eth_btc',
+  'fct_btc',
+  'lsk_jpy',
+  'ltc_jpy',
+  'qtum_jpy',
+  'xem_btc',
+  'xem_jpy',
+  'xlm_btc',
+  'xlm_jpy',
+  'xrp_btc',
+  'xrp_jpy',
+  'enj_btc',
+  'enj_jpy',
+  'omg_btc',
+  'omg_jpy'
 ]
 
-type RatePair =
-  | Join<btc, jpy>
-  | Join<etc, jpy>
-  | Join<fct, jpy>
-  | Join<mona, jpy>
-  | Join<iost, jpy>
+type RatePair = StrictExtract<
+  all_pairs,
+  | 'btc_jpy'
+  | 'etc_jpy'
+  | 'fct_jpy'
+  | 'mona_jpy'
+  | 'iost_jpy'
+  | 'eth_jpy'
+  | 'bat_jpy'
+  | 'mona_btc'
+  | 'bat_btc'
+  | 'bch_btc'
+  | 'bch_jpy'
+  | 'ltc_btc'
+  | 'plt_jpy'
+  | 'lsk_btc'
+  | 'iost_btc'
+  | 'qtum_btc'
+  | 'etc_btc'
+  | 'eth_btc'
+  | 'fct_btc'
+  | 'lsk_jpy'
+  | 'ltc_jpy'
+  | 'qtum_jpy'
+  | 'xem_btc'
+  | 'xem_jpy'
+  | 'xlm_btc'
+  | 'xlm_jpy'
+  | 'xrp_btc'
+  | 'xrp_jpy'
+  | 'enj_btc'
+  | 'enj_jpy'
+  | 'omg_btc'
+  | 'omg_jpy'
+>
 
 type RateOptions = {
   pair: RatePair

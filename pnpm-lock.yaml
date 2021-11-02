@@ -14,7 +14,7 @@ specifiers:
   commitizen: ^4.2.4
   commitlint: ^14.1.0
   commitlint-config-gitmoji: ^2.2.5
-  cryptocurrency-types: ^1.0.0-beta.3
+  cryptocurrency-types: ^1.0.0-beta.4
   cz-emoji: ^1.3.1
   esbuild: ^0.13.12
   esbuild-register: ^3.0.0
@@ -37,7 +37,7 @@ specifiers:
   yaml-lint: ^1.2.4
 
 dependencies:
-  cryptocurrency-types: 1.0.0-beta.3
+  cryptocurrency-types: 1.0.0-beta.4
   node-fetch: 2.6.6
 
 devDependencies:
@@ -2278,8 +2278,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /cryptocurrency-types/1.0.0-beta.3:
-    resolution: {integrity: sha512-EXrCt0h+9O2VAjQ+tnhdBcUYKkAfEH61ws8siZ1WpaYchmfDgtJUqJ6ch1KvV1Kh1RbcHQE9eISDumcocMrecQ==}
+  /cryptocurrency-types/1.0.0-beta.4:
+    resolution: {integrity: sha512-k5ODzYaJNrhooICPzNjZehf0rM0I9T/3W4h/S+BVh+6nCJERcSkkm27VQYZkklHVydZFyO6x3Z6rike6c9oqPQ==}
     dev: false
 
   /cssom/0.3.8:

@@ -3,10 +3,10 @@ import { jsonFetch } from '@/shared/fetch'
 
 import type { OrderType, PublicAPI } from '@/shared/types'
 import type { StrictExtract } from '@/utils/types'
-import type { all_Pairs } from 'cryptocurrency-types'
+import type { all_pairs } from 'cryptocurrency-types'
 
 type ExchangeRatePair = StrictExtract<
-  all_Pairs,
+  all_pairs,
   'btc_jpy' | 'etc_jpy' | 'fct_jpy' | 'mona_jpy' | 'plt_jpy'
 >
 

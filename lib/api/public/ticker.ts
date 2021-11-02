@@ -3,11 +3,11 @@ import { jsonFetch } from '@/shared/fetch'
 
 import type { PublicAPI } from '@/shared/types'
 import type { StrictExtract } from '@/utils/types'
-import type { all_Pairs } from 'cryptocurrency-types'
+import type { all_pairs } from 'cryptocurrency-types'
 
 const ALL_TICKER_PAIRS: TickerPair[] = ['btc_jpy', 'plt_jpy']
 
-type TickerPair = StrictExtract<all_Pairs, 'btc_jpy' | 'plt_jpy'>
+type TickerPair = StrictExtract<all_pairs, 'btc_jpy' | 'plt_jpy'>
 
 type TickerOptions = {
   pair: TickerPair
