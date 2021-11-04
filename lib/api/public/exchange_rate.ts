@@ -30,7 +30,7 @@ const ALL_EXCHANGE_RATE_PAIRS: ExchangeRatePair[] = [
   'plt_jpy'
 ]
 
-const exchangeRate: PublicAPI<ExchangeRateOptions, ExchangeRateResponse> =
+const fetchExchangeRate: PublicAPI<ExchangeRateOptions, ExchangeRateResponse> =
   async ({ pair, orderType }, init) => {
     const url = new URL(API_EXCHANGE_ORDERS_RATE, BASE_URL)
 
@@ -42,5 +42,5 @@ const exchangeRate: PublicAPI<ExchangeRateOptions, ExchangeRateResponse> =
     return jsonFetch(url, init)
   }
 
-export { exchangeRate, ALL_EXCHANGE_RATE_PAIRS }
+export { fetchExchangeRate, ALL_EXCHANGE_RATE_PAIRS }
 export type { ExchangeRatePair, OrderType }

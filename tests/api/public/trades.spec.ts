@@ -1,8 +1,8 @@
-import { trades } from '@/api/public/trades'
+import { fetchTrades } from '@/api/public/trades'
 
-describe('trades', () => {
+describe('fetchTrades', () => {
   it('should return right interface', async () => {
-    const expected = await trades({ pair: 'btc_jpy' })
+    const expected = await fetchTrades({ pair: 'btc_jpy' })
     const { success, pagination, data } = expected
     const { limit, order, starting_after, ending_before } = pagination
     const { id, amount, rate, pair, order_type, created_at } = data[0]

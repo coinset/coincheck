@@ -1,5 +1,5 @@
 {
-  "name": "coincheck-client",
+  "name": "@coinset/coincheck",
   "description": "Coincheck API client for Node.js",
   "version": "1.0.0-beta.3",
   "main": "dist/index.cjs.js",
@@ -10,6 +10,9 @@
       "require": "./dist/index.cjs.js",
       "import": "./dist/index.es.js"
     }
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "scripts": {
     "commit": "cz",
@@ -72,13 +75,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/TomokiMiyauci/coincheck-client.git"
+    "url": "https://github.com/coinset/coincheck.git"
   },
   "files": [
     "dist"
   ],
-  "homepage": "https://github.com/TomokiMiyauci/coincheck-client#readme",
-  "bugs": "https://github.com/TomokiMiyauci/coincheck-client/issues",
+  "homepage": "https://github.com/coinset/coincheck#readme",
+  "bugs": "https://github.com/coinset/coincheck/issues",
   "funding": {
     "type": "patreon",
     "url": "https://www.patreon.com/tomoki_miyauci"

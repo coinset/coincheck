@@ -1,8 +1,8 @@
-import { rate } from '@/api/public/rate'
+import { fetchRate } from '@/api/public/rate'
 
-describe('rate', () => {
+describe('fetchRate', () => {
   it('should return right interface', async () => {
-    const result = await rate({ pair: 'btc_jpy' })
+    const result = await fetchRate({ pair: 'btc_jpy' })
 
     expect.assertions(2)
 

@@ -9,10 +9,10 @@ const reviver: Reviver = (key, value) => {
     key === 'asks' ||
     (key === 'bids' && Array.isArray(value) && !!value.length)
   ) {
-    return (value as [string, string][]).map((v) => {
-      const [vv, vvv] = v
-      return [parseFloat(vv), parseFloat(vvv)]
-    })
+    return (value as [string, string][]).map(([price, amount]) => [
+      parseFloat(price),
+      parseFloat(amount)
+    ])
   }
   return value
 }
@@ -22,11 +22,13 @@ type OrderBooksResponse = {
   bids: [number, number][]
 }
 
-const orderBooks = async (init?: RequestInit): Promise<OrderBooksResponse> => {
+const fetchOrderBooks = async (
+  init?: RequestInit
+): Promise<OrderBooksResponse> => {
   const url = new URL(API_ORDER_BOOKS, BASE_URL)
 
   return jsonFetch(url, init, { parseJson: reviver })
 }
 
-export { orderBooks }
+export { fetchOrderBooks }
 export type { OrderBooksResponse }

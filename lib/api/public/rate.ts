@@ -94,11 +94,14 @@ const reviver: Reviver = (key, value) => {
   return value
 }
 
-const rate: PublicAPI<RateOptions, RateResponse> = async ({ pair }, init) => {
+const fetchRate: PublicAPI<RateOptions, RateResponse> = async (
+  { pair },
+  init
+) => {
   const url = new URL(join(API_RATE, pair), BASE_URL)
 
   return jsonFetch<RateResponse>(url, init, { parseJson: reviver })
 }
 
-export { rate, ALL_RATE_PAIRS }
+export { fetchRate, ALL_RATE_PAIRS }
 export type { RateOptions, RateResponse }

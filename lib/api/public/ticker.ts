@@ -31,7 +31,7 @@ type TickerResponse = {
  * @see https://coincheck.com/ja/documents/exchange/api#ticker
  * @beta
  */
-const ticker: PublicAPI<TickerOptions, TickerResponse> = async (
+const fetchTicker: PublicAPI<TickerOptions, TickerResponse> = async (
   { pair },
   init
 ) => {
@@ -44,5 +44,5 @@ const ticker: PublicAPI<TickerOptions, TickerResponse> = async (
   return jsonFetch(url, init)
 }
 
-export { ticker, ALL_TICKER_PAIRS }
+export { fetchTicker, ALL_TICKER_PAIRS }
 export type { TickerPair, TickerResponse }

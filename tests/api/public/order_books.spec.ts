@@ -1,8 +1,8 @@
-import { orderBooks } from '@/api/public/order_books'
+import { fetchOrderBooks } from '@/api/public/order_books'
 
-describe('orderBooks', () => {
+describe('fetchOrderBooks', () => {
   it('should return right interface', async () => {
-    const expected = await orderBooks()
+    const expected = await fetchOrderBooks()
     const { asks, bids } = expected
 
     expect(Object.keys(expected)).toContain('asks')

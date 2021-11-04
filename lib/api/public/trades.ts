@@ -50,7 +50,7 @@ type TradesResponse = {
   }[]
 }
 
-const trades: PublicAPI<TradesOptions, TradesResponse> = async (
+const fetchTrades: PublicAPI<TradesOptions, TradesResponse> = async (
   { pair },
   init
 ) => {
@@ -63,5 +63,5 @@ const trades: PublicAPI<TradesOptions, TradesResponse> = async (
   return jsonFetch(url, init, { parseJson: reviver })
 }
 
-export { trades, ALL_TRADES_PAIRS }
+export { fetchTrades, ALL_TRADES_PAIRS }
 export type { TradesOptions, TradesResponse }
