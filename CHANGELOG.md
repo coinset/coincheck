@@ -1,3 +1,9 @@
+# [v1.0.0-beta.4](https://github.com/coinset/coincheck/compare/v1.0.0-beta.3...v1.0.0-beta.4) (2021-11-04)
+
+## ✨ New Features
+
+- [`aedbd46`](https://github.com/coinset/coincheck/commit/aedbd46) Rename package name
+
 # [v1.0.0-beta.3](https://github.com/TomokiMiyauci/coincheck-client/compare/v1.0.0-beta.2...v1.0.0-beta.3) (2021-11-02)
 
 ## ✨ New Features
