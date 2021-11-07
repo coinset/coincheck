@@ -1,7 +1,7 @@
 import { BASE_URL, API_TICKER } from '@/constants/api'
 import { jsonFetch } from '@/shared/fetch'
+import type { PublicAPI } from '@/shared/types/fetch'
 
-import type { PublicAPI } from '@/shared/types'
 import type { StrictExtract } from '@/utils/types'
 import type { all_pairs } from 'cryptocurrency-types'
 
@@ -35,12 +35,9 @@ const fetchTicker: PublicAPI<TickerOptions, TickerResponse> = async (
   { pair },
   init
 ) => {
-  const searchParams = new URLSearchParams({
-    pair
-  })
-
   const url = new URL(API_TICKER, BASE_URL)
-  url.search = searchParams.toString()
+
+  url.searchParams.set('pair', pair)
   return jsonFetch(url, init)
 }
 

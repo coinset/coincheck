@@ -1,10 +1,9 @@
 import { BASE_URL, API_RATE } from '@/constants/api'
 import { jsonFetch } from '@/shared/fetch'
+import type { Reviver, PublicAPI } from '@/shared/types/fetch'
 
 import { join } from 'path'
 
-import { Reviver } from '@/shared/types'
-import type { PublicAPI } from '@/shared/types'
 import type { StrictExtract } from '@/utils/types'
 import type { all_pairs } from 'cryptocurrency-types'
 
@@ -104,4 +103,4 @@ const fetchRate: PublicAPI<RateOptions, RateResponse> = async (
 }
 
 export { fetchRate, ALL_RATE_PAIRS }
-export type { RateOptions, RateResponse }
+export type { RatePair, RateOptions, RateResponse }

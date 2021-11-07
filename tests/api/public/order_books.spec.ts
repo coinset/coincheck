@@ -2,19 +2,20 @@ import { fetchOrderBooks } from '@/api/public/order_books'
 
 describe('fetchOrderBooks', () => {
   it('should return right interface', async () => {
-    const expected = await fetchOrderBooks()
-    const { asks, bids } = expected
+    const { asks, bids } = await fetchOrderBooks()
 
-    expect(Object.keys(expected)).toContain('asks')
-    expect(Object.keys(expected)).toContain('bids')
+    const expectPriceAmount = (value: [number, number][]) => {
+      expect(value).toBeArray()
 
-    expect(asks).toEqual(expect.any(Array))
-    expect(bids).toEqual(expect.any(Array))
-    expect(asks[0]).toEqual(expect.any(Array))
-    expect(bids[0]).toEqual(expect.any(Array))
-    expect(asks[0][0]).toEqual(expect.any(Number))
-    expect(asks[0][1]).toEqual(expect.any(Number))
-    expect(bids[0][0]).toEqual(expect.any(Number))
-    expect(bids[0][1]).toEqual(expect.any(Number))
+      value.forEach((priceAmount) => {
+        expect(priceAmount).toBeArray()
+        expect(priceAmount).toHaveLength(2)
+        expect(priceAmount[0]).toBeNumber()
+        expect(priceAmount[1]).toBeNumber()
+      })
+    }
+
+    expectPriceAmount(asks)
+    expectPriceAmount(bids)
   })
 })

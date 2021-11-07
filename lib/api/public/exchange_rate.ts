@@ -1,9 +1,10 @@
 import { API_EXCHANGE_ORDERS_RATE, BASE_URL } from '@/constants/api'
 import { jsonFetch } from '@/shared/fetch'
+import type { PublicAPI, Reviver } from '@/shared/types/fetch'
 
-import type { OrderType, PublicAPI } from '@/shared/types'
 import type { StrictExtract } from '@/utils/types'
 import type { all_pairs } from 'cryptocurrency-types'
+import type { Exclusive } from 'utilitypes'
 
 type ExchangeRatePair = StrictExtract<
   all_pairs,
@@ -12,8 +13,15 @@ type ExchangeRatePair = StrictExtract<
 
 type ExchangeRateOptions = {
   pair: ExchangeRatePair
-  orderType: OrderType
-}
+  orderType: 'sell' | 'buy'
+} & Exclusive<
+  {
+    amount: number
+  },
+  {
+    price: number
+  }
+>
 
 type ExchangeRateResponse = {
   success: boolean
@@ -30,17 +38,33 @@ const ALL_EXCHANGE_RATE_PAIRS: ExchangeRatePair[] = [
   'plt_jpy'
 ]
 
+const reviver: Reviver = (key, value) => {
+  if (['rate', 'amount', 'price'].includes(key) && typeof value === 'string') {
+    return Number(value)
+  }
+
+  return value
+}
+
 const fetchExchangeRate: PublicAPI<ExchangeRateOptions, ExchangeRateResponse> =
-  async ({ pair, orderType }, init) => {
+  async ({ pair, orderType, price, amount }, init) => {
     const url = new URL(API_EXCHANGE_ORDERS_RATE, BASE_URL)
 
-    url.search = new URLSearchParams({
-      pair,
-      order_type: orderType
-    }).toString()
+    url.searchParams.set('pair', pair)
+    url.searchParams.set('order_type', orderType)
 
-    return jsonFetch(url, init)
+    if (typeof price === 'number') {
+      url.searchParams.set('price', String(price))
+    }
+
+    if (typeof amount === 'number') {
+      url.searchParams.set('amount', String(amount))
+    }
+
+    return jsonFetch(url, init, {
+      parseJson: reviver
+    })
   }
 
 export { fetchExchangeRate, ALL_EXCHANGE_RATE_PAIRS }
-export type { ExchangeRatePair, OrderType }
+export type { ExchangeRateOptions, ExchangeRatePair, ExchangeRateResponse }
