@@ -1,14 +1,15 @@
 import { API_EXCHANGE_ORDERS_RATE, BASE_URL } from '@/constants/api'
 import { jsonFetch } from '@/shared/fetch'
+import type { CoincheckSymbol } from '@/shared/types/currency'
 import type { PublicAPI, Reviver } from '@/shared/types/fetch'
 
 import type { StrictExtract } from '@/utils/types'
-import type { all_pairs } from 'cryptocurrency-types'
+import type { btc, etc, fct, jpy, mona, plt, Pair } from 'cryptocurrency-types'
 import type { Exclusive } from 'utilitypes'
 
-type ExchangeRatePair = StrictExtract<
-  all_pairs,
-  'btc_jpy' | 'etc_jpy' | 'fct_jpy' | 'mona_jpy' | 'plt_jpy'
+type ExchangeRatePair = Pair<
+  StrictExtract<CoincheckSymbol, btc | etc | fct | mona | plt>,
+  jpy
 >
 
 type ExchangeRateOptions = {

@@ -1,13 +1,14 @@
 import { BASE_URL, API_TICKER } from '@/constants/api'
 import { jsonFetch } from '@/shared/fetch'
+import type { CoincheckSymbol } from '@/shared/types/currency'
 import type { PublicAPI } from '@/shared/types/fetch'
 
 import type { StrictExtract } from '@/utils/types'
-import type { all_pairs } from 'cryptocurrency-types'
+import type { btc, jpy, plt, Pair } from 'cryptocurrency-types'
 
 const ALL_TICKER_PAIRS: TickerPair[] = ['btc_jpy', 'plt_jpy']
 
-type TickerPair = StrictExtract<all_pairs, 'btc_jpy' | 'plt_jpy'>
+type TickerPair = Pair<StrictExtract<CoincheckSymbol, btc | plt>, jpy>
 
 type TickerOptions = {
   pair: TickerPair
