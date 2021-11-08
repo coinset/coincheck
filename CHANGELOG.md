@@ -1,3 +1,9 @@
+# [v1.0.0-beta.5](https://github.com/coinset/coincheck/compare/v1.0.0-beta.4...v1.0.0-beta.5) (2021-11-08)
+
+## ✨ New Features
+
+- [`a88f7d5`](https://github.com/coinset/coincheck/commit/a88f7d5) Add public websocket utility
+
 # [v1.0.0-beta.4](https://github.com/coinset/coincheck/compare/v1.0.0-beta.3...v1.0.0-beta.4) (2021-11-04)
 
 ## ✨ New Features
