@@ -3,8 +3,6 @@ import { jsonFetch } from '@/shared/fetch'
 import type { CoincheckSymbol } from '@/shared/types/currency'
 import type { Reviver, PublicAPI } from '@/shared/types/fetch'
 
-import { join } from 'path'
-
 import type { StrictExtract } from '@/utils/types'
 import type {
   jpy,
@@ -106,7 +104,7 @@ const fetchRate: PublicAPI<RateOptions, RateResponse> = async (
   { pair },
   init
 ) => {
-  const url = new URL(join(API_RATE, pair), BASE_URL)
+  const url = new URL(pair, new URL(API_RATE, BASE_URL))
 
   return jsonFetch<RateResponse>(url, init, { parseJson: reviver })
 }

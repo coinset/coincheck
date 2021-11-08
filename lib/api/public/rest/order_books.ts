@@ -2,8 +2,6 @@ import { BASE_URL, API_ORDER_BOOKS } from '@/constants/api'
 import { jsonFetch } from '@/shared/fetch'
 import { Reviver, SimplePublicAPI } from '@/shared/types/fetch'
 
-import type { RequestInit } from 'node-fetch'
-
 const reviver: Reviver = (key, value) => {
   if (key === 'asks' || (key === 'bids' && Array.isArray(value))) {
     return (value as [string, string][]).map(([price, amount]) => [

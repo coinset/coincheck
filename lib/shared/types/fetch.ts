@@ -1,5 +1,3 @@
-import type { RequestInit } from 'node-fetch'
-
 type PublicAPI<O, R> = (options: O, init?: RequestInit) => Promise<R>
 type SimplePublicAPI<O, R> = (options?: O, init?: RequestInit) => Promise<R>
 
