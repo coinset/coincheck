@@ -1,6 +1,9 @@
 {
   "testEnvironment": "node",
-  "testMatch": ["<rootDir>/tests/**/*.spec.[tj]s?(x)"],
+  "testMatch": [
+    "<rootDir>/tests/**/*.spec.[tj]s?(x)",
+    "<rootDir>/tests/**/*_spec.[tj]s?(x)"
+  ],
   "transform": {
     "^.+\\.(t|j)sx?$": "@swc/jest"
   },
