@@ -1,3 +1,9 @@
+# [v1.0.0-beta.6](https://github.com/coinset/coincheck/compare/v1.0.0-beta.5...v1.0.0-beta.6) (2021-11-08)
+
+## 🐛 Bug Fixes
+
+- [`938c709`](https://github.com/coinset/coincheck/commit/938c709) Use cross-fetch instead of node-fetch to universal library
+
 # [v1.0.0-beta.5](https://github.com/coinset/coincheck/compare/v1.0.0-beta.4...v1.0.0-beta.5) (2021-11-08)
 
 ## ✨ New Features
