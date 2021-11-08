@@ -1,5 +1,5 @@
-import { ALL_EXCHANGE_RATE_PAIRS } from '@/api/public/exchange_rate'
-import { fetchTrades } from '@/api/public/trades'
+import { ALL_EXCHANGE_RATE_PAIRS } from '@/api/public/rest/exchange_rate'
+import { fetchTrades } from '@/api/public/rest/trades'
 
 describe('fetchTrades', () => {
   it('should return right interface', async () => {

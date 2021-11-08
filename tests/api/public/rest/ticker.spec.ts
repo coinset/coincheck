@@ -1,4 +1,4 @@
-import { fetchTicker } from '@/api/public/ticker'
+import { fetchTicker } from '@/api/public/rest/ticker'
 
 describe('fetchTicker', () => {
   it('should request to /api/ticker', async () => {

@@ -1,4 +1,4 @@
-import { fetchRate } from '@/api/public/rate'
+import { fetchRate } from '@/api/public/rest/rate'
 
 describe('fetchRate', () => {
   it('should return right interface', async () => {

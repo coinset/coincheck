@@ -1,5 +1,5 @@
-import { ALL_EXCHANGE_RATE_PAIRS } from '@/api/public/exchange_rate'
-import type { ExchangeRatePair } from '@/api/public/exchange_rate'
+import { ALL_EXCHANGE_RATE_PAIRS } from '@/api/public/rest/exchange_rate'
+import type { ExchangeRatePair } from '@/api/public/rest/exchange_rate'
 import { BASE_URL, API_TRADES } from '@/constants/api'
 import { jsonFetch } from '@/shared/fetch'
 import type { Reviver, PublicAPI } from '@/shared/types/fetch'

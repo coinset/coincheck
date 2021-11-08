@@ -1,4 +1,4 @@
-import { fetchOrderBooks } from '@/api/public/order_books'
+import { fetchOrderBooks } from '@/api/public/rest/order_books'
 
 describe('fetchOrderBooks', () => {
   it('should return right interface', async () => {
