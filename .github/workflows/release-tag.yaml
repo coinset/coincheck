@@ -23,7 +23,7 @@ jobs:
           deno-version: ${{ matrix.deno }}
 
       - name: Lint
-        run: deno lint -c deno.config
+        run: deno lint -c deno.json
 
   test:
     runs-on: ${{ matrix.os }}
