@@ -1,3 +1,10 @@
+# [1.0.0-beta.7](https://github.com/coinset/coincheck/compare/v1.0.0-beta.6...v1.0.0-beta.7) (2021-11-30)
+
+
+### Features
+
+* switch code base to deno ([5b57653](https://github.com/coinset/coincheck/commit/5b57653fdf84310f21a297520aca390b417b290c))
+
 # [v1.0.0-beta.6](https://github.com/coinset/coincheck/compare/v1.0.0-beta.5...v1.0.0-beta.6) (2021-11-08)
 
 ## 🐛 Bug Fixes
