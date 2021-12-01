@@ -1,9 +1,14 @@
 import {
+  any,
+  anyNumber,
+  anyString,
   defineExpect,
   jestExtendedMatcherMap,
   jestMatcherMap,
+  jestModifierMap,
+  objectContaining,
   test,
-} from "https://deno.land/x/unitest@v1.0.0-beta.41/mod.ts";
+} from "https://deno.land/x/unitest@v1.0.0-beta.44/mod.ts";
 import { isNull, isNumber } from "https://deno.land/x/isx/mod.ts";
 
 const expect = defineExpect({
@@ -18,6 +23,8 @@ const expect = defineExpect({
       };
     },
   },
+
+  modifierMap: jestModifierMap,
 });
 
-export { expect, test };
+export { any, anyNumber, anyString, expect, objectContaining, test };
