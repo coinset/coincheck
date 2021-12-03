@@ -1,4 +1,4 @@
-import { any, anyNumber, expect, objectContaining, test } from "../dev_deps.ts";
+import { any, anyNumber, expect, test } from "../dev_deps.ts";
 import { fetchExchangeRate } from "./exchange_rate.ts";
 
 test({
@@ -8,11 +8,11 @@ test({
       pair: "btc_jpy",
       orderType: "buy",
       amount: 1,
-    })).resolves.toEqual(objectContaining({
+    })).resolves.toEqual({
       success: any(Boolean),
       rate: anyNumber(),
       amount: anyNumber(),
       price: anyNumber(),
-    }));
+    });
   },
 });

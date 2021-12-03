@@ -1,4 +1,4 @@
-import { anyNumber, expect, objectContaining, test } from "../dev_deps.ts";
+import { anyNumber, expect, test } from "../dev_deps.ts";
 import { ALL_TICKER_PAIRS, API_TICKER, fetchTicker } from "./ticker.ts";
 
 test({
@@ -6,7 +6,7 @@ test({
   fn: async () => {
     await expect(fetchTicker({
       pair: "btc_jpy",
-    })).resolves.toEqual(objectContaining({
+    })).resolves.toEqual({
       last: anyNumber(),
       bid: anyNumber(),
       ask: anyNumber(),
@@ -14,7 +14,7 @@ test({
       low: anyNumber(),
       volume: anyNumber(),
       timestamp: anyNumber(),
-    }));
+    });
   },
 });
 
